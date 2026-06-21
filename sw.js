@@ -1,6 +1,6 @@
 /* Amp Academy — NEC 2023 Journeyman · service worker (SAS §2.3)
    Offline-first runtime cache: page + Google Fonts. Derived edition build 2026-06-18. */
-const CACHE = 'aa-jrny-2023-v2';   /* v2: relay-backed tutor added 2026-06-18 */
+const CACHE = 'aa-jrny-2023-v5';   /* v2: relay-backed tutor added 2026-06-18 */
 self.addEventListener('install', e => { self.skipWaiting(); });
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
